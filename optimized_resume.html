@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Aniyah Hunter</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @media print {
+      body { background: #fff !important; }
+      .resume { box-shadow: none !important; max-width: 100% !important; margin: 0 !important; padding: 40px !important; }
+      .no-print { display: none !important; }
+      @page { margin: 0.5in; }
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0e1a;
+      color: #1a1a2e;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .no-print {
+      text-align: center;
+      padding: 24px;
+      background: rgba(17, 24, 39, 0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .no-print a, .no-print button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .no-print a {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #f1f5f9;
+    }
+
+    .no-print a:hover { border-color: #d4a853; color: #d4a853; }
+
+    .no-print button {
+      background: #d4a853;
+      color: #0a0e1a;
+      border: none;
+    }
+
+    .no-print button:hover { background: #e8c87a; }
+
+    .resume {
+      max-width: 8.5in;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 56px 52px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border-radius: 4px;
+    }
+
+    /* Header */
+    .r-header {
+      text-align: center;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #1a1a2e;
+    }
+
+    .r-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .r-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #8b7a3d;
+      margin-bottom: 10px;
+    }
+
+    .r-contact {
+      font-size: 0.82rem;
+      color: #555;
+    }
+
+    .r-contact span { margin: 0 6px; color: #ccc; }
+
+    /* Section */
+    .r-section {
+      margin-bottom: 22px;
+    }
+
+    .r-section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: #1a1a2e;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+
+    /* Objective */
+    .r-objective {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* Experience */
+    .r-entry { margin-bottom: 16px; }
+
+    .r-entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+
+    .r-role {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: #1a1a2e;
+    }
+
+    .r-date {
+      font-size: 0.82rem;
+      color: #888;
+      white-space: nowrap;
+    }
+
+    .r-company {
+      font-size: 0.85rem;
+      color: #8b7a3d;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .r-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .r-bullets li {
+      font-size: 0.85rem;
+      color: #444;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .r-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #8b7a3d;
+      font-size: 0.75rem;
+    }
+
+    /* Education */
+    .r-edu-entry { margin-bottom: 10px; }
+
+    .r-edu-degree {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .r-edu-school {
+      font-size: 0.85rem;
+      color: #8b7a3d;
+    }
+
+    .r-edu-details {
+      font-size: 0.83rem;
+      color: #555;
+    }
+
+    /* Skills */
+    .r-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 32px;
+    }
+
+    .r-skill-item {
+      font-size: 0.85rem;
+      color: #444;
+      padding: 2px 0;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .r-skill-item::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #8b7a3d;
+    }
+
+    /* Certifications */
+    .r-cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .r-cert-item {
+      font-size: 0.85rem;
+      color: #444;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .r-cert-item::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: #8b7a3d;
+      font-size: 0.7rem;
+    }
+
+    .r-cert-item strong {
+      color: #1a1a2e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toolbar -->
+  <div class="no-print">
+    <a href="index.html">← Back to Website</a>
+    <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <!-- Resume -->
+  <div class="resume">
+
+    <header class="r-header">
+      <h1 class="r-name">Aniyah Hunter</h1>
+      <p class="r-title">Lawyer in Training</p>
+      <p class="r-contact">
+        Cataula, GA 31804
+        <span>|</span> (706) 936-9669
+        <span>|</span> hunteraniyah@gmail.com
+      </p>
+    </header>
+
+    <!-- Objective -->
+    <section class="r-section">
+      <h2 class="r-section-title">Objective</h2>
+      <p class="r-objective">
+        Ambitious and detail-oriented Political Science major with a Criminal Justice minor and a 3.7 GPA at The University of Alabama, seeking to leverage strong analytical, research, and communication skills in a pre-law career. Bringing diverse professional experience in client-facing roles, creative design, and team collaboration, with a commitment to advocacy, justice, and community impact.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section class="r-section">
+      <h2 class="r-section-title">Education</h2>
+      <div class="r-edu-entry">
+        <div class="r-entry-header">
+          <div class="r-edu-degree">Bachelor of Arts in Political Science, Minor in Criminal Justice</div>
+          <div class="r-date">Expected 2027</div>
+        </div>
+        <div class="r-edu-school">The University of Alabama — Tuscaloosa, AL</div>
+        <div class="r-edu-details">GPA: 3.7 · Pre-Law Track · Relevant Coursework: Constitutional Law, Criminal Justice, Political Theory</div>
+      </div>
+      <div class="r-edu-entry">
+        <div class="r-entry-header">
+          <div class="r-edu-degree">High School Diploma</div>
+          <div class="r-date">2023</div>
+        </div>
+        <div class="r-edu-school">Central High School — Phenix City, AL</div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="r-section">
+      <h2 class="r-section-title">Professional Experience</h2>
+
+      <div class="r-entry">
+        <div class="r-entry-header">
+          <div class="r-role">Sales Associate</div>
+          <div class="r-date">Oct 2024 — Apr 2025</div>
+        </div>
+        <div class="r-company">Target — Tuscaloosa, AL</div>
+        <ul class="r-bullets">
+          <li>Delivered exceptional customer service by assisting shoppers, resolving inquiries, and ensuring a well-organized store environment</li>
+          <li>Processed transactions accurately using POS systems while maintaining product displays and sales floor standards</li>
+          <li>Managed inventory responsibilities including stocking, product checks, and display maintenance</li>
+          <li>Developed strong interpersonal and conflict-resolution skills through daily customer-facing interactions</li>
+        </ul>
+      </div>
+
+      <div class="r-entry">
+        <div class="r-entry-header">
+          <div class="r-role">Online Grocery Associate</div>
+          <div class="r-date">May 2024 — Present</div>
+        </div>
+        <div class="r-company">Walmart — Columbus, GA</div>
+        <ul class="r-bullets">
+          <li>Accurately picked and packed customer orders while maintaining quality standards for perishable and non-perishable items</li>
+          <li>Operated efficiently in a high-volume environment, consistently meeting order fulfillment deadlines</li>
+          <li>Supported inventory management through restocking and product availability tracking</li>
+          <li>Ensured seamless customer pickup experience through attention to detail and proactive communication</li>
+        </ul>
+      </div>
+
+      <div class="r-entry">
+        <div class="r-entry-header">
+          <div class="r-role">Design Intern</div>
+          <div class="r-date">Sep 2022 — Sep 2024</div>
+        </div>
+        <div class="r-company">The Game — Phenix City, AL</div>
+        <ul class="r-bullets">
+          <li>Designed custom branded merchandise using Adobe Photoshop and Illustrator, translating client specifications into polished visuals</li>
+          <li>Collaborated with the design team to develop logos and product mockups aligned with brand guidelines</li>
+          <li>Managed digital asset organization and file management systems to support efficient daily operations</li>
+          <li>Demonstrated meticulous attention to detail, meeting strict production deadlines while maintaining quality standards</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="r-section">
+      <h2 class="r-section-title">Skills</h2>
+      <div class="r-skills-grid">
+        <div class="r-skill-item">Critical Thinking & Analytical Research</div>
+        <div class="r-skill-item">Adobe Photoshop & Illustrator (Certified)</div>
+        <div class="r-skill-item">Strong Written & Verbal Communication</div>
+        <div class="r-skill-item">Adobe After Effects & Premiere Pro</div>
+        <div class="r-skill-item">Problem-Solving & Conflict Resolution</div>
+        <div class="r-skill-item">Microsoft Word, Excel & PowerPoint</div>
+        <div class="r-skill-item">Customer Relations & Client Service</div>
+        <div class="r-skill-item">POS Systems & Cash Handling</div>
+        <div class="r-skill-item">Team Collaboration & Adaptability</div>
+        <div class="r-skill-item">Digital File & Asset Management</div>
+        <div class="r-skill-item">Time Management & Multitasking</div>
+        <div class="r-skill-item">Graphic Design & Visual Layout</div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="r-section">
+      <h2 class="r-section-title">Certifications</h2>
+      <div class="r-cert-list">
+        <div class="r-cert-item"><strong>Adobe Certified Professional</strong> — Visual Design with Adobe Illustrator</div>
+        <div class="r-cert-item"><strong>Adobe Certified Professional</strong> — Visual Design with Adobe Photoshop</div>
+        <div class="r-cert-item"><strong>IC3 Digital Literacy Certification</strong> — Certiport</div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
